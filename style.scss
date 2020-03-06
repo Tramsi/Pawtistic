@@ -1,0 +1,63 @@
+// Variables
+$text: #545871;
+$bg: #f7eceb;
+$hover: #ebd0ce;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-image: url(dog.jpg);
+  height: 100vh;
+  width: 40%;
+  min-width: 478px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: white;
+
+  .container {
+    margin-left: 20%;
+  }
+  h3 {
+    font-size: 1.3em;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+    padding: 50px 0px;
+    .fa-paw {
+      color: $text;
+      transform: rotate(-45deg);
+    }
+    .icon-background {
+      color: $hover;
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    margin: 0 0 40px 0;
+  }
+  ul {
+    list-style-position: inside;
+
+    li {
+      margin: 40px auto;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
