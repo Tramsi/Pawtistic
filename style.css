@@ -21,38 +21,69 @@ header {
   background-image: url(dog.jpg);
   height: 100vh;
   width: 40%;
-  min-width: 478px;
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
   color: white;
+  margin-right: auto;
+  float: left;
 }
 
 header .container {
-  margin-left: 20%;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media (max-width: 478px) {
+  header {
+    width: 100%;
+  }
 }
 
 header h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.3em;
   font-weight: 200;
   letter-spacing: 0.2rem;
   padding: 50px 0px;
 }
 
-header h3 .fa-paw {
-  color: #545871;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+header h3 .icon-bg {
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 25px;
+  margin-right: 20px;
+  background-color: #ebd0ce;
 }
 
-header h3 .icon-background {
-  color: #ebd0ce;
+header h3 .icon-bg .icon {
+  color: #545871;
+}
+
+header h3 .icon-bg .fa-paw {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 header h2 {
   font-size: 2rem;
   letter-spacing: 0.1rem;
-  margin: 0 0 40px 0;
+  margin: 15px 0 40px 0;
 }
 
 header ul {
@@ -63,5 +94,181 @@ header ul li {
   margin: 40px auto;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+}
+
+main {
+  width: 60%;
+  height: 88vh;
+  background-color: #f7eceb;
+  color: #545871;
+  float: left;
+  padding-top: 50px;
+  overflow: hidden;
+}
+
+main .container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 478px) {
+  main {
+    width: 100%;
+    height: auto;
+  }
+  main .container .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  main .container .card .left {
+    padding: 20px 15px;
+  }
+  main .container .card .right {
+    padding: 20px 15px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-top: 1px solid #f7eceb;
+  }
+}
+
+main h1 {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+}
+
+main .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ebd0ce;
+  line-height: 1.6;
+  overflow: hidden;
+  min-width: 0;
+}
+
+main .card:hover {
+  background-color: #ebd0ce;
+}
+
+main .card:hover .left .icon-bg {
+  background-color: white;
+}
+
+main .card .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+  padding-right: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .card .left .icon-bg {
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 25px;
+  margin-right: 20px;
+  background-color: #f7eceb;
+}
+
+main .card .left .icon-bg .icon {
+  color: #ebd0ce;
+}
+
+main .card .left .icon-bg .fa-tree {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+main .card .right {
+  padding: 10px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid #f7eceb;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .card .right .price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+main .read {
+  color: black;
+}
+
+footer {
+  width: 60%;
+  float: left;
+  height: 12vh;
+}
+
+footer .container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 478px) {
+  footer {
+    width: 100%;
+  }
+}
+
+footer .container {
+  height: 12vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .container a {
+  text-decoration: none;
+  color: #545871;
+  padding: 10px 40px;
+  border: 1px solid #545871;
+  border-radius: 30px;
+}
+
+footer .container a:hover {
+  color: white;
+  background-color: #545871;
 }
 /*# sourceMappingURL=style.css.map */

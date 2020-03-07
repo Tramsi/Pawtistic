@@ -20,44 +20,70 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-  background-image: url(dog.jpg);
-  height: 100vh;
-  width: 40%;
-  min-width: 478px;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  color: white;
-
+@mixin container($width) {
   .container {
-    margin-left: 20%;
+    width: $width;
+    margin: 0 auto;
   }
-  h3 {
-    font-size: 1.3em;
-    font-weight: 200;
-    letter-spacing: 0.2rem;
-    padding: 50px 0px;
-    .fa-paw {
-      color: $text;
-      transform: rotate(-45deg);
-    }
-    .icon-background {
-      color: $hover;
-    }
-  }
-  h2 {
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    margin: 0 0 40px 0;
-  }
-  ul {
-    list-style-position: inside;
+}
 
-    li {
-      margin: 40px auto;
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
+@mixin max($maxWidth) {
+  @media (max-width:#{$maxWidth}) {
+    @content;
+  }
+}
+
+@function halfSize($size) {
+  $size: $size/2;
+  @return #{$size}px;
+}
+
+@mixin icon($iconName, $size, $iconColor, $bgColor, $rotate) {
+  .icon-bg {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: #{$size}px;
+    height: #{$size}px;
+    padding: halfSize($size);
+    margin-right: 20px;
+    background-color: $bgColor;
+
+    .icon {
+      color: $iconColor;
+    }
+    .fa-#{$iconName} {
+      transform: rotate(#{$rotate}deg);
+    }
+  }
+}
+@import "header";
+@import "main";
+
+footer {
+  width: 60%;
+  float: left;
+  height: 12vh;
+  @include container(70%);
+  @include max(478px) {
+    width: 100%;
+  }
+  .container {
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $text;
+      padding: 10px 40px;
+      border: 1px solid $text;
+      border-radius: 30px;
+      &:hover {
+        color: white;
+        background-color: $text;
+      }
     }
   }
 }
