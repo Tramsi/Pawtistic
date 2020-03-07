@@ -9,8 +9,13 @@ header {
   margin-right: auto;
   float: left;
   @include container(60%);
-  @include max("478px") {
+  @include max(992px) {
+    height: 88vh;
+  }
+  @include max("768px") {
     width: 100%;
+    height: auto;
+    min-height: 100vh;
   }
 
   h3 {

@@ -1,3 +1,21 @@
+@mixin mediaM() {
+  .container {
+    .card {
+      flex-direction: column;
+      padding: 0;
+      .left {
+        padding: 20px 15px;
+      }
+      .right {
+        padding: 20px 15px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid $bg;
+      }
+    }
+  }
+}
 main {
   width: 60%;
   height: 88vh;
@@ -10,9 +28,12 @@ main {
   // &::-webkit-scrollbar {
   //   display: none;
   // }
-  @include max("478px") {
-    width: 100%;
-    height: auto;
+  @include max(1200px) {
+    .container .card .left {
+      padding-right: 10px;
+    }
+  }
+  @include max(992px) {
     .container {
       .card {
         flex-direction: column;
@@ -29,6 +50,27 @@ main {
         }
       }
     }
+  }
+  @include max(768px) {
+    width: 100%;
+    height: auto;
+    // .container {
+    //   .card {
+    //     flex-direction: column;
+    //     padding: 0;
+    //     .left {
+    //       padding: 20px 15px;
+    //     }
+    //     .right {
+    //       padding: 20px 15px;
+    //       flex-direction: row;
+    //       align-items: center;
+    //       justify-content: space-around;
+    //       border-top: 1px solid $bg;
+    //     }
+    //   }
+    // }
+    // @include mediaM();
   }
   h1 {
     font-size: 2.7rem;
@@ -74,7 +116,10 @@ main {
       }
     }
   }
-  .read {
-    color: black;
+  .seeMore {
+    margin: 10px 0;
+    .read {
+      color: black;
+    }
   }
 }

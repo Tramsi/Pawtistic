@@ -34,9 +34,17 @@ header .container {
   margin: 0 auto;
 }
 
-@media (max-width: 478px) {
+@media (max-width: 992px) {
+  header {
+    height: 88vh;
+  }
+}
+
+@media (max-width: 768px) {
   header {
     width: 100%;
+    height: auto;
+    min-height: 100vh;
   }
 }
 
@@ -111,11 +119,13 @@ main .container {
   margin: 0 auto;
 }
 
-@media (max-width: 478px) {
-  main {
-    width: 100%;
-    height: auto;
+@media (max-width: 1200px) {
+  main .container .card .left {
+    padding-right: 10px;
   }
+}
+
+@media (max-width: 992px) {
   main .container .card {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -138,6 +148,13 @@ main .container {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     border-top: 1px solid #f7eceb;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -225,7 +242,11 @@ main .card .right .price {
   font-weight: 600;
 }
 
-main .read {
+main .seeMore {
+  margin: 10px 0;
+}
+
+main .seeMore .read {
   color: black;
 }
 
@@ -240,7 +261,7 @@ footer .container {
   margin: 0 auto;
 }
 
-@media (max-width: 478px) {
+@media (max-width: 992px) {
   footer {
     width: 100%;
   }
