@@ -1,0 +1,34 @@
+header {
+  background-image: url(dog.jpg);
+  height: 100vh;
+  width: 40%;
+  // min-width: 478px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: white;
+  margin-right: auto;
+  @include container(60%);
+
+  h3 {
+    font-size: 1.3em;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+    padding: 50px 0px;
+    @include icon("paw", $text, $hover, -45deg);
+  }
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    margin: 15px 0 40px 0;
+  }
+  ul {
+    list-style-position: inside;
+
+    li {
+      margin: 40px auto;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
