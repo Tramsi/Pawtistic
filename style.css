@@ -239,6 +239,12 @@ main .seeMore .read {
         justify-content: space-around;
     border-top: 1px solid #f7eceb;
   }
+  main .container .card .right .price {
+    margin-right: auto;
+  }
+  main .container .card .right p:nth(1) {
+    margin-right: 5px;
+  }
   main .container .card:hover .right {
     border: none;
     border-top: 1px solid #f7eceb;
