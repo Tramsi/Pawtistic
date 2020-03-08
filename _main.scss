@@ -4,8 +4,9 @@ main {
   color: $text;
   @include container(70%);
   padding-top: 50px;
-  overflow: hidden;
-
+  display: flex;
+  align-items: center;
+  min-height: 88vh;
   h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;

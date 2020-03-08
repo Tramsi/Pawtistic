@@ -17,6 +17,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: -ms-grid;
   display: grid;
+  height: auto;
+  min-height: 100vh;
   -ms-grid-columns: 0.4fr 0.6fr;
       grid-template-columns: 0.4fr 0.6fr;
       grid-template-areas: "header main" "header footer";
@@ -110,7 +112,13 @@ main {
   background-color: #f7eceb;
   color: #545871;
   padding-top: 50px;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 88vh;
 }
 
 main .container {
@@ -255,6 +263,13 @@ footer {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: footer;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .container {

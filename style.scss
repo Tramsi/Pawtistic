@@ -17,27 +17,6 @@ $hover: #ebd0ce;
   }
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
-  grid-template-areas:
-    "header main"
-    "header footer";
-  @include max(762px) {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-}
-
 @mixin container($width) {
   .container {
     width: $width;
@@ -70,27 +49,30 @@ body {
     }
   }
 }
-@import "header";
-@import "main";
 
-footer {
-  grid-area: footer;
-  @include container(70%);
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a {
-      text-decoration: none;
-      color: $text;
-      padding: 10px 40px;
-      border: 1px solid $text;
-      margin: 15px 0;
-      border-radius: 30px;
-      &:hover {
-        color: white;
-        background-color: $text;
-      }
-    }
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  height: auto;
+  min-height: 100vh;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-areas:
+    "header main"
+    "header footer";
+  @include max(762px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
   }
 }
+
+@import "header";
+@import "main";
+@import "footer";
