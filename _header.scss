@@ -1,6 +1,6 @@
 header {
   background-image: url(dog.jpg);
-  height: 100vh;
+  height: 100%;
   width: 40%;
   background-size: cover;
   background-position: center bottom;
@@ -10,12 +10,12 @@ header {
   float: left;
   @include container(60%);
   @include max(992px) {
-    height: 88vh;
+    height: 88%;
   }
   @include max("768px") {
     width: 100%;
     height: auto;
-    min-height: 100vh;
+    min-height: 100%;
   }
 
   h3 {

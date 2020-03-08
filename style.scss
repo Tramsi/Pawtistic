@@ -64,13 +64,13 @@ body {
 footer {
   width: 60%;
   float: left;
-  height: 12vh;
+  height: 12%;
   @include container(70%);
   @include max(992px) {
     width: 100%;
   }
   .container {
-    height: 12vh;
+    // height: 12%;
     display: flex;
     justify-content: space-between;
     align-items: center;
