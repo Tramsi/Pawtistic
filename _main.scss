@@ -1,11 +1,10 @@
 main {
-  width: 60%;
-  height: 88%;
+  grid-area: main;
   background-color: $bg;
   color: $text;
-  float: left;
   @include container(70%);
   padding-top: 50px;
+  overflow: hidden;
 
   h1 {
     font-size: 2.5rem;
@@ -92,20 +91,5 @@ main {
         }
       }
     }
-  }
-  @include max(768px) {
-    width: 100%;
-    height: auto;
-  }
-  @media screen and (min-width: 768px) {
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-      width: 15px;
-      background-color: $bg;
-    }
-  }
-  &::-webkit-scrollbar-thumb {
-    width: 15px;
-    background-color: $hover;
   }
 }

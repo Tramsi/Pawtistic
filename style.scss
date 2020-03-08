@@ -11,6 +11,12 @@ $hover: #ebd0ce;
   box-sizing: inherit;
 }
 
+@mixin max($maxWidth) {
+  @media (max-width:#{$maxWidth}) {
+    @content;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -18,18 +24,24 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-areas:
+    "header main"
+    "header footer";
+  @include max(762px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
 }
 
 @mixin container($width) {
   .container {
     width: $width;
     margin: 0 auto;
-  }
-}
-
-@mixin max($maxWidth) {
-  @media (max-width:#{$maxWidth}) {
-    @content;
   }
 }
 
@@ -62,15 +74,9 @@ body {
 @import "main";
 
 footer {
-  width: 60%;
-  float: left;
-  height: 12%;
+  grid-area: footer;
   @include container(70%);
-  @include max(992px) {
-    width: 100%;
-  }
   .container {
-    // height: 12%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +85,7 @@ footer {
       color: $text;
       padding: 10px 40px;
       border: 1px solid $text;
+      margin: 15px 0;
       border-radius: 30px;
       &:hover {
         color: white;
