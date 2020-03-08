@@ -80,7 +80,7 @@ main {
           .price {
             margin-right: auto;
           }
-          p:nth(1) {
+          p:nth-of-type(1) {
             margin-right: 5px;
           }
         }

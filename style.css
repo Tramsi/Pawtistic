@@ -242,7 +242,7 @@ main .seeMore .read {
   main .container .card .right .price {
     margin-right: auto;
   }
-  main .container .card .right p:nth(1) {
+  main .container .card .right p:nth-of-type(1) {
     margin-right: 5px;
   }
   main .container .card:hover .right {
