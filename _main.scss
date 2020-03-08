@@ -1,21 +1,3 @@
-@mixin mediaM() {
-  .container {
-    .card {
-      flex-direction: column;
-      padding: 0;
-      .left {
-        padding: 20px 15px;
-      }
-      .right {
-        padding: 20px 15px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        border-top: 1px solid $bg;
-      }
-    }
-  }
-}
 main {
   width: 60%;
   height: 88vh;
@@ -24,11 +6,59 @@ main {
   float: left;
   @include container(70%);
   padding-top: 50px;
-  overflow: hidden;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
-  @include max(1200px) {
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    display: flex;
+    background-color: white;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid $hover;
+    line-height: 1.6;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $hover;
+      .left {
+        .icon-bg {
+          background-color: white;
+        }
+      }
+    }
+
+    .left {
+      display: flex;
+      padding: 10px 20px;
+      padding-right: 100px;
+      align-items: center;
+      @include icon("tree", 50, $hover, $bg, 0);
+    }
+
+    .right {
+      padding: 10px 40px;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid $bg;
+      justify-content: center;
+      .price {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .seeMore {
+    margin: 15px 0;
+    .read {
+      color: black;
+    }
+  }
+
+  @include max(1400px) {
     .container .card .left {
       padding-right: 10px;
     }
@@ -48,78 +78,28 @@ main {
           justify-content: space-around;
           border-top: 1px solid $bg;
         }
+        &:hover {
+          .right {
+            border: none;
+            border-top: 1px solid $bg;
+          }
+        }
       }
     }
   }
   @include max(768px) {
     width: 100%;
     height: auto;
-    // .container {
-    //   .card {
-    //     flex-direction: column;
-    //     padding: 0;
-    //     .left {
-    //       padding: 20px 15px;
-    //     }
-    //     .right {
-    //       padding: 20px 15px;
-    //       flex-direction: row;
-    //       align-items: center;
-    //       justify-content: space-around;
-    //       border-top: 1px solid $bg;
-    //     }
-    //   }
-    // }
-    // @include mediaM();
   }
-  h1 {
-    font-size: 2.7rem;
-    margin-bottom: 20px;
-  }
-
-  .card {
-    display: flex;
-    background-color: white;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid $hover;
-    line-height: 1.6;
-    overflow: hidden;
-    min-width: 0;
-    // min-width: 420px;
-
-    &:hover {
-      background-color: $hover;
-      .left {
-        .icon-bg {
-          background-color: white;
-        }
-      }
-    }
-
-    .left {
-      display: flex;
-      padding: 10px 20px;
-      padding-right: 100px;
-      align-items: center;
-      @include icon("tree", 50, $hover, $bg, 0);
-    }
-    .right {
-      padding: 10px 40px;
-      display: flex;
-      flex-direction: column;
-      border-left: 1px solid $bg;
-      justify-content: center;
-      .price {
-        font-size: 2rem;
-        font-weight: 600;
-      }
+  @media screen and (min-width: 768px) {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 15px;
+      background-color: $bg;
     }
   }
-  .seeMore {
-    margin: 10px 0;
-    .read {
-      color: black;
-    }
+  &::-webkit-scrollbar-thumb {
+    width: 15px;
+    background-color: $hover;
   }
 }

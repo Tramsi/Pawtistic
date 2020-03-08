@@ -111,7 +111,6 @@ main {
   color: #545871;
   float: left;
   padding-top: 50px;
-  overflow: hidden;
 }
 
 main .container {
@@ -119,47 +118,8 @@ main .container {
   margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
-  main .container .card .left {
-    padding-right: 10px;
-  }
-}
-
-@media (max-width: 992px) {
-  main .container .card {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 0;
-  }
-  main .container .card .left {
-    padding: 20px 15px;
-  }
-  main .container .card .right {
-    padding: 20px 15px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    border-top: 1px solid #f7eceb;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    width: 100%;
-    height: auto;
-  }
-}
-
 main h1 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
@@ -173,7 +133,6 @@ main .card {
   border: 1px solid #ebd0ce;
   line-height: 1.6;
   overflow: hidden;
-  min-width: 0;
 }
 
 main .card:hover {
@@ -243,11 +202,69 @@ main .card .right .price {
 }
 
 main .seeMore {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 main .seeMore .read {
   color: black;
+}
+
+@media (max-width: 1400px) {
+  main .container .card .left {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  main .container .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  main .container .card .left {
+    padding: 20px 15px;
+  }
+  main .container .card .right {
+    padding: 20px 15px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-top: 1px solid #f7eceb;
+  }
+  main .container .card:hover .right {
+    border: none;
+    border-top: 1px solid #f7eceb;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    overflow-y: scroll;
+  }
+  main::-webkit-scrollbar {
+    width: 15px;
+    background-color: #f7eceb;
+  }
+}
+
+main::-webkit-scrollbar-thumb {
+  width: 15px;
+  background-color: #ebd0ce;
 }
 
 footer {
