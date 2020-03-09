@@ -1,0 +1,38 @@
+@mixin max($maxWidth) {
+  @media (max-width:#{$maxWidth}) {
+    @content;
+  }
+}
+
+@mixin container($width) {
+  .container {
+    width: $width;
+    margin: 0 auto;
+  }
+}
+
+@function halfSize($size) {
+  $size: $size/2;
+  @return #{$size}px;
+}
+
+@mixin icon($iconName, $size, $iconColor, $bgColor, $rotate) {
+  .icon-bg {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: #{$size}px;
+    height: #{$size}px;
+    padding: halfSize($size);
+    margin-right: 20px;
+    background-color: $bgColor;
+
+    .icon {
+      color: $iconColor;
+    }
+    .fa-#{$iconName} {
+      transform: rotate(#{$rotate}deg);
+    }
+  }
+}
